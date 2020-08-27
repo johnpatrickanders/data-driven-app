@@ -2,14 +2,16 @@
 
 const express = require('express');
 const morgan = require('morgan');
-
+const cookieParser = require('cookie-parser');
 const routes = require('./routes/route');
 
 const app = express();
 
-app.set('view engine', 'pug');
 
+app.set('view engine', 'pug');
 app.use(morgan('dev'))
+app.use(cookieParser());
+app.use(express.urlencoded({ extented: false }))
 app.use(routes);
 
 
