@@ -1,0 +1,10 @@
+//- error.pug
+
+extends layout.pug
+
+block content
+ div
+   p= message || 'PUG designated error.'
+ if stack
+   h3 Stack Trace
+   pre= stack
